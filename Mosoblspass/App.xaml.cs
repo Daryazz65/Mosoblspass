@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mosoblspass.Model;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,5 +14,14 @@ namespace Mosoblspass
     /// </summary>
     public partial class App : Application
     {
+        private static MosoblpoghspasEntities _context;
+        public static MosoblpoghspasEntities GetContext()
+        {
+            if (_context == null)
+            {
+                _context = new MosoblpoghspasEntities();
+            }
+            return _context;
+        }
     }
 }
