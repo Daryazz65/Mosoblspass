@@ -43,6 +43,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
@@ -96,6 +97,9 @@
     <Compile Include="Model\User.cs">
       <DependentUpon>ModelMosobl.tt</DependentUpon>
     </Compile>
+    <Compile Include="View\Admin\Pages\ChangePasswordPage.xaml.cs">
+      <DependentUpon>ChangePasswordPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Admin\Windows\AdminWindow.xaml.cs">
       <DependentUpon>AdminWindow.xaml</DependentUpon>
     </Compile>
@@ -110,6 +114,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Styles\StylesPack.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Admin\Pages\ChangePasswordPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -162,7 +170,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\Icons\" />
-    <Folder Include="View\Admin\Pages\" />
     <Folder Include="View\Dispatcher\Pages\" />
   </ItemGroup>
   <ItemGroup>

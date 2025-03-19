@@ -1,4 +1,6 @@
 ﻿using Mosoblspass.Model;
+using Mosoblspass.View.Admin.Pages;
+using Mosoblspass.View.Login.Windows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +26,19 @@ namespace Mosoblspass.View.Admin.Windows
         public AdminWindow()
         {
             InitializeComponent();
+        }
+
+        private void ChangePasswordBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ChangePasswordPage changePasswordPage = new ChangePasswordPage();
+            MainFrame.Navigate(changePasswordPage);
+        }
+
+        private void GoOutBtn_Click(object sender, RoutedEventArgs e)
+        {
+            LoginWindow loginWindow = new LoginWindow();
+            loginWindow.Show();
+            Close();
         }
     }
 }

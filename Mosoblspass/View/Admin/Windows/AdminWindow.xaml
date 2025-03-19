@@ -5,9 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Mosoblspass.View.Admin.Windows"
         mc:Ignorable="d"
-        Title="Окно системного администрирования" Height="600" Width="1020" 
+        Title="Окно системного администрирования" Height="700" Width="1020" 
              WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
-    <Grid>
-        <TextBlock Text="sis"/>
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+            <Button Name="ChangePasswordBtn" Click="ChangePasswordBtn_Click">
+                <TextBlock Text="Управление пользователями" 
+                           Foreground="White" TextAlignment="Center"/>
+            </Button>
+            <Button Name="GoOutBtn" Click="GoOutBtn_Click" Grid.Column="1">
+                <TextBlock Text="Выйти из аккаунта"
+                           Foreground="White" TextAlignment="Center"/>
+            </Button>
+        <Frame Name="MainFrame" Grid.Row="1" Grid.ColumnSpan="2" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>

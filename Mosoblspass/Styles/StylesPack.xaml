@@ -29,8 +29,6 @@
     </Style>
     <Style TargetType="ComboBox">
         <Setter Property="FontSize" Value="20" />
-        <Setter Property="HorizontalAlignment" Value="Center" />
-        <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="Margin" Value="10" />
         <Setter Property="FontFamily" Value="Tahoma" />
         <Setter Property="Foreground" Value="#015198" />
@@ -39,5 +37,8 @@
         <Setter Property="HorizontalAlignment" Value="Center" />
         <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="Margin" Value="10" />
+    </Style>
+    <Style TargetType="DataGrid">
+        <Setter Property="FontSize" Value="15" />
     </Style>
 </ResourceDictionary>
