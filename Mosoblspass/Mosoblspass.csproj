@@ -64,6 +64,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AppData\AuthHelper.cs" />
+    <Compile Include="AppData\MessageBoxHelper.cs" />
     <Compile Include="Model\Address.cs">
       <DependentUpon>ModelMosobl.tt</DependentUpon>
     </Compile>
@@ -97,6 +99,9 @@
     <Compile Include="View\Admin\Windows\AdminWindow.xaml.cs">
       <DependentUpon>AdminWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Dispatcher\Windows\DispatcherMainWindow.xaml.cs">
+      <DependentUpon>DispatcherMainWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Login\Windows\LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
@@ -109,6 +114,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Admin\Windows\AdminWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Dispatcher\Windows\DispatcherMainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -152,11 +161,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="AppData\" />
-    <Folder Include="Resources\" />
+    <Folder Include="Resources\Icons\" />
     <Folder Include="View\Admin\Pages\" />
     <Folder Include="View\Dispatcher\Pages\" />
-    <Folder Include="View\Dispatcher\Windows\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Model\ModelMosobl.Context.tt">
@@ -169,6 +176,8 @@
       <DependentUpon>ModelMosobl.edmx</DependentUpon>
       <LastGenOutput>ModelMosobl.cs</LastGenOutput>
     </Content>
+    <Resource Include="Resources\Images\Shapka.png" />
+    <Resource Include="Resources\Images\Logo.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

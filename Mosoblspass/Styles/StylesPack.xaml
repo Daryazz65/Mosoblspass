@@ -2,10 +2,10 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Style TargetType="Button">
         <Setter Property="FontSize" Value="20" />
-        <Setter Property="HorizontalAlignment" Value="Center" />
-        <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="Margin" Value="10" />
         <Setter Property="FontFamily" Value="Tahoma" />
+        <Setter Property="Background" Value="#015198" />
+        <Setter Property="Foreground" Value="White" />
     </Style>
     <Style TargetType="TextBlock">
         <Setter Property="FontSize" Value="20" />
@@ -13,20 +13,19 @@
         <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="Margin" Value="10" />
         <Setter Property="FontFamily" Value="Tahoma" />
+        <Setter Property="Foreground" Value="#015198" />
     </Style>
     <Style TargetType="TextBox">
         <Setter Property="FontSize" Value="20" />
-        <Setter Property="HorizontalAlignment" Value="Center" />
-        <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="Margin" Value="10" />
         <Setter Property="FontFamily" Value="Tahoma" />
+        <Setter Property="Foreground" Value="#ADADAD" />
     </Style>
     <Style TargetType="PasswordBox">
         <Setter Property="FontSize" Value="20" />
-        <Setter Property="HorizontalAlignment" Value="Center" />
-        <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="Margin" Value="10" />
         <Setter Property="FontFamily" Value="Tahoma" />
+        <Setter Property="Foreground" Value="#ADADAD" />
     </Style>
     <Style TargetType="ComboBox">
         <Setter Property="FontSize" Value="20" />
@@ -34,5 +33,11 @@
         <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="Margin" Value="10" />
         <Setter Property="FontFamily" Value="Tahoma" />
+        <Setter Property="Foreground" Value="#015198" />
+    </Style>
+    <Style TargetType="Image">
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Margin" Value="10" />
     </Style>
 </ResourceDictionary>

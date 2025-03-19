@@ -6,8 +6,38 @@
         xmlns:local="clr-namespace:Mosoblspass.View.Login.Windows"
         mc:Ignorable="d"
         Title="Окно авторизации" Height="600" Width="1020" 
-              WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+              WindowStartupLocation="CenterScreen" ResizeMode="NoResize" >
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="130" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <Image Source="/Resources/Images/Shapka.png" Grid.ColumnSpan="3" Margin="0"/>
+        <TextBlock Text="Расписание выезда подразделений для тушения пожаров и проведения аварийно - спасательных работ" 
+                   Grid.ColumnSpan="3" Foreground="White"/>
+        <Image Source="/Resources/Images/Logo.png" Grid.Column="1" Grid.Row="1"/>
+        <TextBlock Text="Авторизация" Grid.Column="1" Grid.Row="2" FontSize="30" FontWeight="Bold"/>
+        <StackPanel Grid.Column="1" Grid.Row="3" Grid.RowSpan="6">
+            <TextBlock Text="Введите логин:" HorizontalAlignment="Left" Foreground="#ADADAD"/>
+            <TextBox x:Name="LoginTb" />
+            <TextBlock Text="Введите пароль:" HorizontalAlignment="Left" Foreground="#ADADAD"/>
+            <PasswordBox Name="PasswordPb"/>
+            <Button Name="GoBtn" Click="GoBtn_Click">
+                <TextBlock Text="Войти" Foreground="White" FontWeight="Bold" FontSize="20"/>
+            </Button>
+            <TextBlock><Hyperlink Name="HL1" Click="HL1_Click_1" FontSize="20"><Run Text="Забыли пароль?"/></Hyperlink></TextBlock>
+        </StackPanel>
     </Grid>
 </Window>

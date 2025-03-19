@@ -13,15 +13,15 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Mosoblspass.View.Admin.Windows
+namespace Mosoblspass.View.Dispatcher.Windows
 {
     /// <summary>
-    /// Логика взаимодействия для AdminWindow.xaml
+    /// Логика взаимодействия для DispatcherMainWindow.xaml
     /// </summary>
-    public partial class AdminWindow : Window
+    public partial class DispatcherMainWindow : Window
     {
         private static MosoblpoghspasEntities _context = App.GetContext();
-        public AdminWindow()
+        public DispatcherMainWindow()
         {
             InitializeComponent();
         }
