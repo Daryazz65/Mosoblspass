@@ -38,18 +38,22 @@ namespace Mosoblspass.View.Login.Windows
                 {
                     DispatcherMainWindow dispatcherMainWindow = new DispatcherMainWindow();
                     dispatcherMainWindow.Show();
+                    CurrentUser.User = AuthHelper.selectedUser; 
+
                 }
                 else
                 {
                     AdminWindow adminWindow = new AdminWindow();
                     adminWindow.Show();
+                    CurrentUser.User = AuthHelper.selectedUser;
+
                 }
                 Close();
             }
         }
         private void HL1_Click_1(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Пожалуйста, обратитесь к системному администратору для восстановления пароля.", "Восстановление пароля", MessageBoxButton.OK, MessageBoxImage.Information);
+            MessageBoxHelper.Information("Пожалуйста, обратитесь к системному администратору для восстановления пароля.");
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using Mosoblspass.Model;
+﻿using Mosoblspass.AppData;
+using Mosoblspass.Model;
+using Mosoblspass.View.Dispatcher.Pages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,47 +22,42 @@ namespace Mosoblspass.View.Dispatcher.Windows
     /// </summary>
     public partial class DispatcherMainWindow : Window
     {
-        private static MosoblpoghspasEntities _context = App.GetContext();
         public DispatcherMainWindow()
         {
             InitializeComponent();
+            SearchPage searchPage = new SearchPage();
+            MainFrame.Navigate(searchPage);
+            FrameHelper.selectedFrame = MainFrame;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            string searchText = SearchTextBox.Text;
-            if (!string.IsNullOrEmpty(searchText))
-            {
-                var address = _context.Addresses.FirstOrDefault(a => a.Name.Contains(searchText));
-                if (address != null)
-                {
-                    var photo = _context.Photos.FirstOrDefault(p => p.Id == address.Id);
-                    if (photo != null)
-                    {
-                        BitmapImage bitmap = new BitmapImage();
-                        using (var stream = new System.IO.MemoryStream(photo.PhotoBinary))
-                        {
-                            bitmap.BeginInit();
-                            bitmap.StreamSource = stream;
-                            bitmap.CacheOption = BitmapCacheOption.OnLoad;
-                            bitmap.EndInit();
-                        }
-                        ResultImage.Source = bitmap;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Фото не найдено для данного адреса.");
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Адрес не найден.");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Введите адрес для поиска.");
-            }
+            
+        }
+
+        private void ProfileBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ProfilePage profilePage = new ProfilePage();
+            MainFrame.Navigate(profilePage);
+        }
+
+        private void SearchBtn_Click(object sender, RoutedEventArgs e)
+        {
+            SearchPage searchPage = new SearchPage();
+            MainFrame.Navigate(searchPage);
+
+        }
+
+        private void DocumsBtn_Click(object sender, RoutedEventArgs e)
+        {
+            DocumentsPage documentPage = new DocumentsPage();
+            MainFrame.Navigate(documentPage);
+        }
+
+        private void JournalBtn_Click(object sender, RoutedEventArgs e)
+        {
+            JournalPage journalPage = new JournalPage();
+            MainFrame.Navigate(journalPage);
         }
     }
 }
