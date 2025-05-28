@@ -28,7 +28,6 @@ namespace Mosoblspass.View.Login.Windows
         {
             InitializeComponent();
         }
-
         private void GoBtn_Click(object sender, RoutedEventArgs e)
         {
             AuthHelper.Authenticate(LoginTb.Text, PasswordPb.Password);

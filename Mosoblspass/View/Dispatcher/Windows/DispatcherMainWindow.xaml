@@ -5,14 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Mosoblspass.View.Dispatcher.Windows"
         mc:Ignorable="d"
-        Title="Окно диспетчера" Height="600" Width="1020" 
+        Title="Окно диспетчера" Height="700" Width="1100" 
                  WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="60" />
             <RowDefinition Height="130" />
-            <RowDefinition Height="70" />
-            <RowDefinition Height="1*" />
+            <RowDefinition Height="510" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" />
@@ -21,8 +20,8 @@
         </Grid.ColumnDefinitions>
         <Image Source="/Resources/Images/Shapka.png" Grid.ColumnSpan="3" Margin="0"/>
         <TextBlock Text="Расписание выезда подразделений для тушения пожаров и проведения аварийно - спасательных работ" 
-                   Grid.ColumnSpan="3" Foreground="White"/>
-        <Image Source="/Resources/Images/Logo.png" Grid.Column="1" Grid.Row="1"/>
+                   Grid.ColumnSpan="3" Foreground="White" HorizontalAlignment="Left"/>
+        <Image Source="/Resources/Images/Logo.png" Grid.Row="1"/>
         <Grid Grid.Row="2" Grid.Column="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="600" />
@@ -33,6 +32,11 @@
                 <TextBlock Text="Поиск" Foreground="White" FontSize="15"/>
             </Button>
         </Grid>
+        <Button Grid.Column="2" HorizontalAlignment="Right" Background="Transparent" Height="53"
+                VerticalAlignment="Center">
+            <Image Source="/Resources/Icons/аккаунт.png"/>
+
+        </Button>
         <Image Name="ResultImage" Grid.Row="3" Grid.ColumnSpan="3" Margin="10" />
     </Grid>
 </Window>

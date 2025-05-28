@@ -27,13 +27,10 @@ namespace Mosoblspass.View.Admin.Windows
         {
             InitializeComponent();
         }
-
         private void ChangePasswordBtn_Click(object sender, RoutedEventArgs e)
         {
-            ChangePasswordPage changePasswordPage = new ChangePasswordPage();
-            MainFrame.Navigate(changePasswordPage);
-        }
 
+        }
         private void GoOutBtn_Click(object sender, RoutedEventArgs e)
         {
             LoginWindow loginWindow = new LoginWindow();

@@ -97,11 +97,14 @@
     <Compile Include="Model\User.cs">
       <DependentUpon>ModelMosobl.tt</DependentUpon>
     </Compile>
-    <Compile Include="View\Admin\Pages\ChangePasswordPage.xaml.cs">
-      <DependentUpon>ChangePasswordPage.xaml</DependentUpon>
+    <Compile Include="View\Admin\Pages\CrudUserPage.xaml.cs">
+      <DependentUpon>CrudUserPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Admin\Windows\AdminWindow.xaml.cs">
       <DependentUpon>AdminWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dispatcher\Pages\SearchPage.xaml.cs">
+      <DependentUpon>SearchPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Dispatcher\Windows\DispatcherMainWindow.xaml.cs">
       <DependentUpon>DispatcherMainWindow.xaml</DependentUpon>
@@ -117,11 +120,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Admin\Pages\ChangePasswordPage.xaml">
+    <Page Include="View\Admin\Pages\CrudUserPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Admin\Windows\AdminWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Dispatcher\Pages\SearchPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -168,10 +175,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\Icons\" />
-    <Folder Include="View\Dispatcher\Pages\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Model\ModelMosobl.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -183,6 +187,7 @@
       <DependentUpon>ModelMosobl.edmx</DependentUpon>
       <LastGenOutput>ModelMosobl.cs</LastGenOutput>
     </Content>
+    <Resource Include="Resources\Icons\аккаунт.png" />
     <Resource Include="Resources\Images\Shapka.png" />
     <Resource Include="Resources\Images\Logo.png" />
   </ItemGroup>
