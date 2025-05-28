@@ -31,6 +31,7 @@ namespace Mosoblspass.View.Dispatcher.Pages
         private void SearchBtn_Click(object sender, RoutedEventArgs e)
         {
             string searchText = SearchTextBox.Text;
+            SearchHistory.Add(SearchTextBox.Text);
             if (!string.IsNullOrEmpty(searchText))
             {
                 var address = _context.Addresses.FirstOrDefault(a => a.Name.Contains(searchText));

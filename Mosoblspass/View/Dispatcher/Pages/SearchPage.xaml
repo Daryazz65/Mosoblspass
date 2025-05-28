@@ -16,7 +16,7 @@
             <RowDefinition Height="70" />
             <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
-            <TextBox Name="SearchTextBox" Margin="15" />
+        <TextBox Name="SearchTextBox" Margin="15" BorderBrush="#ADADAD"/>
         <Button Grid.Column="1" Margin="15" Click="SearchBtn_Click"  Name="SearchBtn">
             <TextBlock Text="Поиск" Foreground="White" FontSize="15"/>
         </Button>
