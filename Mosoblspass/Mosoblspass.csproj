@@ -100,6 +100,9 @@
     <Compile Include="Model\User.cs">
       <DependentUpon>ModelMosobl.tt</DependentUpon>
     </Compile>
+    <Compile Include="View\Admin\Pages\CrudDocumPage.xaml.cs">
+      <DependentUpon>CrudDocumPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Admin\Pages\CrudUserPage.xaml.cs">
       <DependentUpon>CrudUserPage.xaml</DependentUpon>
     </Compile>
@@ -135,6 +138,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Styles\StylesPack.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Admin\Pages\CrudDocumPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

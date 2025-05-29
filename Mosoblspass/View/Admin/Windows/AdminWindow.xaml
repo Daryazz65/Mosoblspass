@@ -9,21 +9,34 @@
              WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid Margin="5">
         <Grid.RowDefinitions>
-            <RowDefinition Height="80" />
-            <RowDefinition Height="1*" />
+            <RowDefinition Height="60" />
+            <RowDefinition Height="130" />
+            <RowDefinition Height="510" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="250" />
+            <ColumnDefinition Width="650" />
             <ColumnDefinition Width="1*" />
         </Grid.ColumnDefinitions>
-            <Button Name="ChangePasswordBtn" Click="ChangePasswordBtn_Click">
-                <TextBlock Text="Управление пользователями" 
-                           Foreground="White" TextAlignment="Center"/>
+        <Image Source="/Resources/Images/Shapka.png" Grid.ColumnSpan="3" Margin="0"/>
+        <TextBlock Text="Расписание выезда подразделений для тушения пожаров и проведения аварийно - спасательных работ" 
+                   Grid.ColumnSpan="3" Foreground="White" HorizontalAlignment="Left"/>
+        <Image Source="/Resources/Images/Logo.png" Grid.Row="1"/>
+        <Button Grid.Column="2" HorizontalAlignment="Right" Background="Transparent" Height="53"
+                VerticalAlignment="Center" Name="ProfileBtn" Click="ProfileBtn_Click">
+            <Image Source="/Resources/Icons/аккаунт.png"/>
+        </Button>
+        <StackPanel Grid.Row="2">
+            <Button Background="#015198" HorizontalAlignment="Center" Margin="20"
+                    Name="UserBtn" Click="UserBtn_Click"  Width="200">
+                <TextBlock Text="Пользователи" TextWrapping="Wrap" FontWeight="Bold" Foreground="White"/>
             </Button>
-            <Button Name="GoOutBtn" Click="GoOutBtn_Click" Grid.Column="1">
-                <TextBlock Text="Выйти из аккаунта"
-                           Foreground="White" TextAlignment="Center"/>
+            <Button Background="#015198" HorizontalAlignment="Center" Margin="20"
+                    Name="DocumsBtn" Click="DocumsBtn_Click"  Width="200">
+                <TextBlock Text="Документы" FontWeight="Bold" Foreground="White"/>
             </Button>
-        <Frame Name="MainFrame" Grid.Row="1" Grid.ColumnSpan="2" NavigationUIVisibility="Hidden"/>
+        </StackPanel>
+        <Frame Name="MainFrame" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"
+               Grid.RowSpan="2" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>

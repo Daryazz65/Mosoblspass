@@ -55,5 +55,15 @@ namespace Mosoblspass.View.Login.Windows
         {
             MessageBoxHelper.Information("Пожалуйста, обратитесь к системному администратору для восстановления пароля.");
         }
+
+        private void CaptchaBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void HL2_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

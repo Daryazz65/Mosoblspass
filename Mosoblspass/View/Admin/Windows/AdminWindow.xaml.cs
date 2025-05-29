@@ -1,5 +1,7 @@
-﻿using Mosoblspass.Model;
+﻿using Mosoblspass.AppData;
+using Mosoblspass.Model;
 using Mosoblspass.View.Admin.Pages;
+using Mosoblspass.View.Dispatcher.Pages;
 using Mosoblspass.View.Login.Windows;
 using System;
 using System.Collections.Generic;
@@ -22,20 +24,33 @@ namespace Mosoblspass.View.Admin.Windows
     /// </summary>
     public partial class AdminWindow : Window
     {
-        private static MosoblpoghspasEntities _context = App.GetContext();
         public AdminWindow()
         {
             InitializeComponent();
-        }
-        private void ChangePasswordBtn_Click(object sender, RoutedEventArgs e)
-        {
-
+            CrudUserPage crudUserPage = new CrudUserPage();
+            MainFrame.Navigate(crudUserPage);
+            FrameHelper.selectedFrame = MainFrame;
         }
         private void GoOutBtn_Click(object sender, RoutedEventArgs e)
         {
             LoginWindow loginWindow = new LoginWindow();
             loginWindow.Show();
             Close();
+        }
+        private void ProfileBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ProfilePage profilePage = new ProfilePage();
+            MainFrame.Navigate(profilePage);
+        }
+        private void UserBtn_Click(object sender, RoutedEventArgs e)
+        {
+            CrudUserPage crudUserPage = new CrudUserPage();
+            MainFrame.Navigate(crudUserPage);
+        }
+        private void DocumsBtn_Click(object sender, RoutedEventArgs e)
+        {
+            CrudDocumPage crudDocumPage = new CrudDocumPage();
+            MainFrame.Navigate(crudDocumPage);
         }
     }
 }

@@ -19,6 +19,10 @@ namespace Mosoblspass.Model
         public int IdRole { get; set; }
         public string Login { get; set; }
         public string Password { get; set; }
+        public byte[] Photo { get; set; }
+        public string Email { get; set; }
+        public string Phone { get; set; }
+        public string Address { get; set; }
     
         public virtual Role Role { get; set; }
     }

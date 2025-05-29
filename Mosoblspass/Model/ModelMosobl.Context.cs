@@ -24,8 +24,7 @@ namespace Mosoblspass.Model
         {
             throw new UnintentionalCodeFirstException();
         }
-
-
+    
         public virtual DbSet<Address> Addresses { get; set; }
         public virtual DbSet<FireDispatchSchedule> FireDispatchSchedules { get; set; }
         public virtual DbSet<Photo> Photos { get; set; }
