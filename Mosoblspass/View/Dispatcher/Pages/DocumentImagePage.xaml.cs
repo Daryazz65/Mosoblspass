@@ -1,10 +1,8 @@
-﻿using Mosoblspass.Model;
-using System;
+﻿using Mosoblspass.AppData;
+using Mosoblspass.Model;
 using System.IO;
 using System.Linq;
-using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Documents;
 using System.Windows.Media.Imaging;
 
 namespace Mosoblspass.View.Dispatcher.Pages
@@ -12,14 +10,11 @@ namespace Mosoblspass.View.Dispatcher.Pages
     public partial class DocumentImagePage : Page
     {
         private static MosoblpoghspasEntities _context = App.GetContext();
-
         public DocumentImagePage(string imagePath, string title)
         {
             InitializeComponent();
-            TitleTextBlock.Text = title; // Use the 'title' parameter instead of 'districtName'
-
-            // Получаем фото из БД по имени
-            var photo = _context.Photos.FirstOrDefault(p => p.Name == imagePath); // Use 'imagePath' parameter instead of 'imageName'
+            TitleTextBlock.Text = title; 
+            var photo = _context.Photos.FirstOrDefault(p => p.Name == imagePath); 
             if (photo != null && photo.PhotoBinary != null)
             {
                 using (var ms = new MemoryStream(photo.PhotoBinary))
@@ -34,7 +29,7 @@ namespace Mosoblspass.View.Dispatcher.Pages
             }
             else
             {
-                MessageBox.Show("Изображение не найдено в базе данных.");
+                MessageBoxHelper.Error("Изображение не найдено в базе данных.");
             }
         }
     }

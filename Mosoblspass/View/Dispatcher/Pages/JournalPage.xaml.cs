@@ -10,19 +10,16 @@ namespace Mosoblspass.View.Dispatcher.Pages
     public partial class JournalPage : Page
     {
         private static MosoblpoghspasEntities _context = App.GetContext();
-
         public JournalPage()
         {
             InitializeComponent();
             HistoryListBox.ItemsSource = SearchHistory.History;
         }
-
         private void HistoryListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             string selectedAddress = HistoryListBox.SelectedItem as string;
             if (string.IsNullOrEmpty(selectedAddress))
                 return;
-
             var address = _context.Addresses.FirstOrDefault(a => a.Name.Contains(selectedAddress));
             if (address != null)
             {
@@ -38,7 +35,6 @@ namespace Mosoblspass.View.Dispatcher.Pages
                         bitmap.CacheOption = BitmapCacheOption.OnLoad;
                         bitmap.EndInit();
                     }
-                    // Покажите фото, например, в новом окне или на странице
                     var window = new Window
                     {
                         Title = "Расписание выезда",

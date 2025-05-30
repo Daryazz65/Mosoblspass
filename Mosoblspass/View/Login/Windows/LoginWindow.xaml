@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Mosoblspass.View.Login.Windows"
         mc:Ignorable="d"
         Title="Окно авторизации" Height="600" Width="1020" 
-              WindowStartupLocation="CenterScreen" ResizeMode="NoResize" >
+               WindowStartupLocation="CenterScreen" ResizeMode="NoResize" >
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*" />

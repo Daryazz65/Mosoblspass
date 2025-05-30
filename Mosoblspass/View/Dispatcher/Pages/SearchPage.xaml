@@ -21,6 +21,5 @@
             <TextBlock Text="Поиск" Foreground="White" FontSize="15"/>
         </Button>
         <Image Name="ResultImage" Grid.Row="1" Grid.ColumnSpan="2" Margin="0 -40 0 0 " Height="500" />
-
     </Grid>
 </Page>

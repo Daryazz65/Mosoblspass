@@ -4,10 +4,17 @@
              xmlns:local="clr-namespace:Mosoblspass"
              StartupUri="\View\Login\Windows\LoginWindow.xaml">
     <Application.Resources>
-            <ResourceDictionary>
-                <ResourceDictionary.MergedDictionaries>
-                    <ResourceDictionary Source="Styles/StylesPack.xaml"/>
-                </ResourceDictionary.MergedDictionaries>
-            </ResourceDictionary>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles/ButtonStyle.xaml"/>
+                <ResourceDictionary Source="Styles/ComboBoxStyle.xaml"/>
+                <ResourceDictionary Source="Styles/DataGridStyle.xaml"/>
+                <ResourceDictionary Source="Styles/ImageStyle.xaml"/>
+                <ResourceDictionary Source="Styles/ListBoxStyle.xaml"/>
+                <ResourceDictionary Source="Styles/PasswordBoxStyle.xaml"/>
+                <ResourceDictionary Source="Styles/TextBlockStyle.xaml"/>
+                <ResourceDictionary Source="Styles/TextboxStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Mosoblspass.View.Admin.Windows"
         mc:Ignorable="d"
-        Title="Окно системного администрирования" Height="700" Width="1100"  
-             WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="Окно системного администрирования" Height="700" Width="1100"
+               WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid Margin="5">
         <Grid.RowDefinitions>
             <RowDefinition Height="60" />

@@ -1,10 +1,5 @@
 ﻿using Mosoblspass.Model;
-using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Mosoblspass.AppData
 {
@@ -12,7 +7,6 @@ namespace Mosoblspass.AppData
     {
         public static User selectedUser;
         private static MosoblpoghspasEntities _context = App.GetContext();
-
         public static bool Authenticate(string login, string password)
         {
             if (string.IsNullOrWhiteSpace(login) || string.IsNullOrWhiteSpace(password))

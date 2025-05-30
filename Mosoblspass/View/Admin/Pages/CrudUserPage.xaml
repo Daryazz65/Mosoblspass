@@ -8,26 +8,26 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <!-- Таблица пользователей -->
-            <DataGrid x:Name="UserGrid" Grid.Row="0" AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Single" SelectionChanged="UserGrid_SelectionChanged"
-                      Margin="0,0,0,20" Height="250">
+            <DataGrid x:Name="UserGrid" Grid.Row="0" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" SelectionChanged="UserGrid_SelectionChanged"
+                     Margin="0,0,0,20" Height="300" ColumnWidth="*" FontSize="14">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="ФИО" Binding="{Binding Name}" Width="*"/>
-                    <DataGridTextColumn Header="Логин" Binding="{Binding Login}" Width="*"/>
-                    <DataGridTextColumn Header="Роль" Binding="{Binding Role.Name}" Width="*"/>
-                    <DataGridTextColumn Header="Почта" Binding="{Binding Email}" Width="*"/>
-                    <DataGridTextColumn Header="Телефон" Binding="{Binding Phone}" Width="*"/>
-                    <DataGridTextColumn Header="Адрес" Binding="{Binding Address}" Width="*"/>
-                    <DataGridTemplateColumn Header="Действия" Width="100">
+                    <DataGridTextColumn Header="ФИО" Binding="{Binding Name}" />
+                    <DataGridTextColumn Header="Логин" Binding="{Binding Login}" />
+                    <DataGridTextColumn Header="Роль" Binding="{Binding Role.Name}"/>
+                    <DataGridTextColumn Header="Почта" Binding="{Binding Email}" />
+                    <DataGridTextColumn Header="Телефон" Binding="{Binding Phone}"/>
+                    <DataGridTextColumn Header="Адрес" Binding="{Binding Address}"/>
+                    <DataGridTemplateColumn Header="Действие" Width="100">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <Button Content="Удалить" Click="DeleteBtn_Click" Tag="{Binding}" Background="#E74C3C" Foreground="White"/>
+                                <Button Click="DeleteBtn_Click" Tag="{Binding}" >
+                                    <TextBlock Text="Удалить" Foreground="White" FontSize="12"/>
+                                </Button>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
                 </DataGrid.Columns>
             </DataGrid>
-            <!-- Форма добавления/редактирования -->
             <Border Grid.Row="1" BorderBrush="#015198" BorderThickness="2" CornerRadius="10" Padding="20" Margin="0,0,0,20">
                 <StackPanel Orientation="Vertical" Width="600">
                     <TextBlock Text="Добавление / Редактирование пользователя" FontWeight="Bold" FontSize="18" Margin="0,0,0,10"/>
@@ -49,7 +49,7 @@
                             <TextBox x:Name="NameBox" />
                             <TextBox x:Name="LoginBox" />
                             <PasswordBox x:Name="PasswordBox" />
-                            <ComboBox x:Name="RoleBox" SelectionChanged="RoleBox_SelectionChanged" DisplayMemberPath="Name" Grid.Row="3" Grid.Column="1" Height="27"/>
+                            <ComboBox x:Name="RoleBox" DisplayMemberPath="Name" Grid.Row="3" Grid.Column="1" Height="20"/>
                             <TextBox x:Name="EmailBox" />
                             <TextBox x:Name="PhoneBox" />
                             <TextBox x:Name="AddressBox" />
@@ -64,9 +64,6 @@
                         </Button>
                         <Button Click="ClearBtn_Click" >
                             <TextBlock Text="Очистить" Foreground="White"/>
-                        </Button>
-                        <Button Click="DeleteBtn_Click" >
-                            <TextBlock Text="Удалить" Foreground="White"/>
                         </Button>
                     </StackPanel>
                 </StackPanel>

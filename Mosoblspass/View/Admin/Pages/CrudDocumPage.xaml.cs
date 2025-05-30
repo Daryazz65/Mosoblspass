@@ -1,20 +1,10 @@
 ﻿using Mosoblspass.Model;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.IO; // Add this namespace at the top of the file
-
+using System.IO;
+using System.Threading.Tasks;
 
 namespace Mosoblspass.View.Admin.Pages
 {
@@ -23,22 +13,22 @@ namespace Mosoblspass.View.Admin.Pages
     /// </summary>
     public partial class CrudDocumPage : Page
     {
-        private MosoblpoghspasEntities _context = new MosoblpoghspasEntities();
+        private static MosoblpoghspasEntities _context = App.GetContext();
         private List<Address> _addresses;
-        private List<Photo> _documents;
         public CrudDocumPage()
         {
             InitializeComponent();
-            LoadAddresses();
-            LoadDocuments();
+            LoadSchedulesAsync();
+            LoadAddressesAsync();
         }
-
-        private void AddAddress_Click(object sender, RoutedEventArgs e)
+        private async void AddAddress_Click(object sender, RoutedEventArgs e)
         {
             var address = new Address { Name = AddressTextBox.Text };
             _context.Addresses.Add(address);
             _context.SaveChanges();
-            AddressComboBox.ItemsSource = _context.Addresses.ToList();
+            var addresses = await Task.Run(() => _context.Addresses.ToList());
+            _addresses = addresses;
+            AddressComboBox.ItemsSource = _addresses;
         }
         private string _selectedFilePath;
         private void SelectPhoto_Click(object sender, RoutedEventArgs e)
@@ -61,7 +51,6 @@ namespace Mosoblspass.View.Admin.Pages
                 };
                 _context.Photos.Add(photo);
                 _context.SaveChanges();
-
                 var schedule = new FireDispatchSchedule
                 {
                     IdAddress = address.Id,
@@ -69,38 +58,25 @@ namespace Mosoblspass.View.Admin.Pages
                 };
                 _context.FireDispatchSchedules.Add(schedule);
                 _context.SaveChanges();
-
-                // Обновить список
-                LoadSchedules();
+                LoadSchedulesAsync();
             }
         }
-        private void LoadSchedules()
+        private async void LoadSchedulesAsync()
         {
-            ScheduleGrid.ItemsSource = _context.FireDispatchSchedules
-                .Include("Address")
-                .Include("Photo")
-                .ToList();
+            ScheduleGrid.ItemsSource = null;
+            var data = await Task.Run(() =>
+                _context.FireDispatchSchedules
+                    .Include("Address")
+                    .Include("Photo")
+                    .ToList()
+            );
+            ScheduleGrid.ItemsSource = data;
         }
-        private void LoadAddresses()
+        private async void LoadAddressesAsync()
         {
-            using (var db = new MosoblpoghspasEntities())
-            {
-                _addresses = new List<Address>(db.Addresses);
-                AddressComboBox.ItemsSource = _addresses;
-            }
+            var addresses = await Task.Run(() => _context.Addresses.ToList());
+            _addresses = addresses;
+            AddressComboBox.ItemsSource = _addresses;
         }
-
-        private void LoadDocuments()
-        {
-            using (var db = new MosoblpoghspasEntities())
-            {
-                _documents = db.Photos
-                    .Include("FireDispatchSchedules.Address")
-                    .ToList();
-                ScheduleGrid.ItemsSource = _documents;
-            }
-        }
-
-
     }
 }

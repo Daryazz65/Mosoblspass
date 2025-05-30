@@ -9,7 +9,6 @@
       Title="DocumentsPage">
     <ScrollViewer>
         <StackPanel x:Name="DocumentsStackPanel" Margin="30">
-            
         </StackPanel>
     </ScrollViewer>
 </Page>

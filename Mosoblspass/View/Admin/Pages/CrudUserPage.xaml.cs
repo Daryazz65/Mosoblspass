@@ -2,7 +2,6 @@
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
-using System.Data.Entity;
 using Mosoblspass.AppData;
 
 namespace Mosoblspass.View.Admin.Pages
@@ -11,7 +10,6 @@ namespace Mosoblspass.View.Admin.Pages
     {
         private static MosoblpoghspasEntities _context = App.GetContext();
         private User selectedUser; 
-
         public CrudUserPage()
         {
             InitializeComponent();
@@ -26,6 +24,7 @@ namespace Mosoblspass.View.Admin.Pages
             UserGrid.ItemsSource = _context.Users.ToList();
             RoleBox.ItemsSource = _context.Roles.ToList();
             RoleBox.DisplayMemberPath = "Name";
+            RoleBox.SelectedValuePath = "Id";
         }
         private void ClearInputs()
         {
@@ -45,10 +44,9 @@ namespace Mosoblspass.View.Admin.Pages
                 string.IsNullOrWhiteSpace(PasswordBox.Password) ||
                 RoleBox.SelectedItem == null)
             {
-                MessageBox.Show("Заполните все обязательные поля (ФИО, Логин, Пароль, Роль).");
+                MessageBoxHelper.Information("Заполните все обязательные поля (ФИО, Логин, Пароль, Роль).");
                 return;
             }
-
             var newUser = new User
             {
                 Name = NameBox.Text,
@@ -59,12 +57,10 @@ namespace Mosoblspass.View.Admin.Pages
                 Phone = PhoneBox.Text,
                 Address = AddressBox.Text
             };
-
             _context.Users.Add(newUser);
             _context.SaveChanges();
             LoadData();
         }
-
         private void UserGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (UserGrid.SelectedItem is User user)
@@ -79,16 +75,13 @@ namespace Mosoblspass.View.Admin.Pages
                 AddressBox.Text = user.Address;
             }
         }
-
-
         private void EditBtn_Click(object sender, RoutedEventArgs e)
         {
             if (selectedUser == null)
             {
-                MessageBox.Show("Выберите пользователя для редактирования.");
+                MessageBoxHelper.Information("Выберите пользователя для редактирования.");
                 return; 
             }
-
             selectedUser.Name = NameBox.Text;
             selectedUser.Login = LoginBox.Text;
             selectedUser.Password = PasswordBox.Password;
@@ -96,38 +89,27 @@ namespace Mosoblspass.View.Admin.Pages
             selectedUser.Email = EmailBox.Text;
             selectedUser.Phone = PhoneBox.Text;
             selectedUser.Address = AddressBox.Text;
-
             _context.SaveChanges();
             LoadData();
-
         }
-
         private void DeleteBtn_Click(object sender, RoutedEventArgs e)
         {
             var user = (sender as Button)?.Tag as User ?? selectedUser;
             if (user == null)
             {
-                MessageBox.Show("Выберите пользователя для удаления.");
+                MessageBoxHelper.Information("Выберите пользователя для удаления.");
                 return;
             }
-
-            if (MessageBox.Show("Удалить выбранного пользователя?", "Подтверждение", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            if (MessageBoxHelper.Question("Удалить выбранного пользователя?", "Подтверждение"))
             {
                 _context.Users.Remove(user);
                 _context.SaveChanges();
                 LoadData();
-
             }
         }
-
         private void ClearBtn_Click(object sender, RoutedEventArgs e)
         {
             ClearInputs();
-        }
-
-        private void RoleBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
         }
     }
 }

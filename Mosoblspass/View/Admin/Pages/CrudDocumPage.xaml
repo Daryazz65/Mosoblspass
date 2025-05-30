@@ -7,7 +7,6 @@
       mc:Ignorable="d" 
       d:DesignHeight="640" d:DesignWidth="850"
       Title="CrudDocumPage">
-
     <Grid Background="#F5F5F5">
         <StackPanel Margin="20" VerticalAlignment="Top" HorizontalAlignment="Left" Width="400" >
             <TextBlock Text="Добавление адреса" FontWeight="Bold" Margin="0,0,0,4"/>
@@ -15,22 +14,18 @@
             <Button Name="AddAddress" Click="AddAddress_Click" Margin="0,0,0,8">
                 <TextBlock Text="Добавить адрес" Foreground="White"/>
             </Button>
-            <Border Height="100"/>
-
+            <Border Height="50"/>
             <TextBlock Text="Выберите адрес" FontWeight="Bold" Margin="0,8,0,4"/>
-            <ComboBox x:Name="AddressComboBox" DisplayMemberPath="Name" Height="32" Margin="0,0,0,8"/>
-
+            <ComboBox x:Name="AddressComboBox" DisplayMemberPath="Name" Height="50" Margin="0,0,0,8"/>
             <TextBlock Text="Документ (фото)" FontWeight="Bold" Margin="0,8,0,4"/>
             <Button Name="SelectPhoto" Click="SelectPhoto_Click" Margin="0,0,0,4">
                 <TextBlock Text="Выбрать документ" Foreground="White"/>
             </Button>
             <TextBlock x:Name="SelectedPhotoText" Foreground="Gray" Margin="0,0,0,8"/>
-
             <Button Name="AddDocument" Click="AddDocument_Click" Margin="0,8,0,8">
                 <TextBlock Text="Добавить документ" Foreground="White"/>
             </Button>
         </StackPanel>
-
         <DataGrid x:Name="ScheduleGrid" AutoGenerateColumns="False" Margin="440,20,20,20" VerticalAlignment="Top" Height="380" IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Адрес" Binding="{Binding Address.Name}" Width="*"/>

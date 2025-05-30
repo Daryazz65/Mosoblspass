@@ -1,9 +1,5 @@
 ﻿using Mosoblspass.View.Dispatcher.Windows;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace Mosoblspass.AppData
@@ -22,7 +18,7 @@ namespace Mosoblspass.AppData
         {
             ShowCustom(text, title, MessageBoxButton.OK);
         }
-        public static bool Question(string text, string title = "Вопрос")
+        public static bool Question(string text, string title = "Вопрос", MessageBoxButton yesNo = default)
         {
             var result = ShowCustom(text, title, MessageBoxButton.YesNo);
             return result == MessageBoxResult.Yes;
@@ -31,7 +27,6 @@ namespace Mosoblspass.AppData
         {
             ShowCustom(text, title, MessageBoxButton.OK);
         }
-
         private static MessageBoxResult ShowCustom(string text, string title, MessageBoxButton buttons)
         {
             var msgBox = new CustomMessageBoxWindow(text, title, buttons);

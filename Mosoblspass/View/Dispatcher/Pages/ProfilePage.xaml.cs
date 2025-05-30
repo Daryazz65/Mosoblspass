@@ -8,7 +8,6 @@ using Microsoft.Win32;
 using Mosoblspass.Model;
 using System.Linq;
 
-
 namespace Mosoblspass.View.Dispatcher.Pages
 {
     public partial class ProfilePage : Page
@@ -18,7 +17,6 @@ namespace Mosoblspass.View.Dispatcher.Pages
             InitializeComponent();
             LoadProfileData();
         }
-
         private void LoadProfileData()
         {
             if (CurrentUser.User != null)
@@ -36,7 +34,7 @@ namespace Mosoblspass.View.Dispatcher.Pages
                 }
                 else
                 {
-                    PhotoImg.Source = null; // или изображение по умолчанию
+                    PhotoImg.Source = null;
                 }
             }
             else
@@ -50,7 +48,6 @@ namespace Mosoblspass.View.Dispatcher.Pages
                 PhotoImg.Source = null;
             }
         }
-
         private BitmapImage ByteArrayToImage(byte[] byteArray)
         {
             using (var ms = new MemoryStream(byteArray))
@@ -63,7 +60,6 @@ namespace Mosoblspass.View.Dispatcher.Pages
                 return image;
             }
         }
-
         private void UploadBtn_Click(object sender, RoutedEventArgs e)
         {
             var openFileDialog = new OpenFileDialog
@@ -74,8 +70,6 @@ namespace Mosoblspass.View.Dispatcher.Pages
             {
                 byte[] photoBytes = File.ReadAllBytes(openFileDialog.FileName);
                 CurrentUser.User.Photo = photoBytes;
-
-                // Сохраняем изменения в БД
                 using (var context = new MosoblpoghspasEntities())
                 {
                     var user = context.Users.AsQueryable().FirstOrDefault(u => u.Id == CurrentUser.User.Id);
@@ -88,12 +82,9 @@ namespace Mosoblspass.View.Dispatcher.Pages
                 LoadProfileData();
             }
         }
-
         private void DeleteBtn_Click(object sender, RoutedEventArgs e)
         {
             CurrentUser.User.Photo = null;
-
-            // Сохраняем изменения в БД
             using (var context = new MosoblpoghspasEntities())
             {
                 var user = context.Users.AsQueryable().FirstOrDefault(u => u.Id == CurrentUser.User.Id);
@@ -105,7 +96,6 @@ namespace Mosoblspass.View.Dispatcher.Pages
             }
             LoadProfileData();
         }
-
         private void GoOutBtn_Click(object sender, RoutedEventArgs e)
         {
             CurrentUser.User = null;
