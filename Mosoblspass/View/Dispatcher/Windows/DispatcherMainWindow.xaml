@@ -5,18 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Mosoblspass.View.Dispatcher.Windows"
         mc:Ignorable="d"
-        Title="Окно диспетчера" Height="700" Width="1100" 
-                 WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="Окно диспетчера" Height="1030" Width="1830" 
+                 WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="60" />
-            <RowDefinition Height="130" />
-            <RowDefinition Height="510" />
+            <RowDefinition Height="150" />
+            <RowDefinition Height="820" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="700" />
-            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="300" />
+            <ColumnDefinition Width="1200" />
+            <ColumnDefinition Width="330" />
         </Grid.ColumnDefinitions>
         <Image Source="/Resources/Images/Shapka.png" Grid.ColumnSpan="3" Margin="0"/>
         <TextBlock Text="Расписание выезда подразделений для тушения пожаров и проведения аварийно - спасательных работ" 

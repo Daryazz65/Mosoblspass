@@ -5,24 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Mosoblspass.View.Admin.Windows"
         mc:Ignorable="d"
-        Title="Окно системного администрирования" Height="700" Width="1100"
-               WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="Окно системного администрирования" Height="1030" Width="1830" 
+               WindowStartupLocation="CenterScreen" >
     <Grid Margin="5">
         <Grid.RowDefinitions>
             <RowDefinition Height="60" />
-            <RowDefinition Height="130" />
-            <RowDefinition Height="510" />
+            <RowDefinition Height="150" />
+            <RowDefinition Height="820" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="250" />
-            <ColumnDefinition Width="650" />
-            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="300" />
+            <ColumnDefinition Width="1200" />
+            <ColumnDefinition Width="330" />
         </Grid.ColumnDefinitions>
         <Image Source="/Resources/Images/Shapka.png" Grid.ColumnSpan="3" Margin="0"/>
         <TextBlock Text="Расписание выезда подразделений для тушения пожаров и проведения аварийно - спасательных работ" 
                    Grid.ColumnSpan="3" Foreground="White" HorizontalAlignment="Left"/>
         <Image Source="/Resources/Images/Logo.png" Grid.Row="1"/>
-        <Button Grid.Column="2" HorizontalAlignment="Right" Background="Transparent" Height="53"
+        <Button Grid.Column="2" HorizontalAlignment="Right" Background="Transparent" Height="53" Margin="0 0 25 0"
                 VerticalAlignment="Center" Name="ProfileBtn" Click="ProfileBtn_Click">
             <Image Source="/Resources/Icons/аккаунт.png"/>
         </Button>

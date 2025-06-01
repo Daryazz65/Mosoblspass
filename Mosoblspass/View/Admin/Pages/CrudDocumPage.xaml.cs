@@ -74,9 +74,50 @@ namespace Mosoblspass.View.Admin.Pages
         }
         private async void LoadAddressesAsync()
         {
-            var addresses = await Task.Run(() => _context.Addresses.ToList());
+            List<Address> addresses = new List<Address>(); 
+            await Task.Run(() =>
+            {
+                using (var context = new MosoblpoghspasEntities())
+                {
+                    addresses = context.Addresses.ToList();
+                }
+            });
             _addresses = addresses;
             AddressComboBox.ItemsSource = _addresses;
         }
+
+
+
+        private void AddressTextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (AddressTextBox.Text == "Введите название адреса")
+            {
+                AddressTextBox.Text = "";
+            }
+        }
+
+        private void AddressTextBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (AddressTextBox.Text == "")
+            {
+                AddressTextBox.Text = "Введите название адреса";
+            }
+        }
+
+        private void DeleteDocumentButton_Click(object sender, RoutedEventArgs e)
+        {
+            var selectedSchedule = ScheduleGrid.SelectedItem as FireDispatchSchedule;
+            if (selectedSchedule != null)
+            {
+                var photo = _context.Photos.FirstOrDefault(p => p.Id == selectedSchedule.IdPhoto);
+                if (photo != null)
+                    _context.Photos.Remove(photo);
+
+                _context.FireDispatchSchedules.Remove(selectedSchedule);
+                _context.SaveChanges();
+                LoadSchedulesAsync();
+            }
+        }
+
     }
 }

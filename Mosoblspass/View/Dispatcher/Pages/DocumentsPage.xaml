@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Mosoblspass.View.Dispatcher.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="640" d:DesignWidth="900"
+      d:DesignHeight="970" d:DesignWidth="1530"
       Title="DocumentsPage">
     <ScrollViewer>
         <StackPanel x:Name="DocumentsStackPanel" Margin="30">

@@ -5,21 +5,23 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Mosoblspass.View.Dispatcher.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="640" d:DesignWidth="900"
+      d:DesignHeight="970" d:DesignWidth="1530"
       Title="Страница поиска">
     <Grid Grid.Row="2" Grid.Column="1">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="600" />
+            <ColumnDefinition Width="1300" />
             <ColumnDefinition Width="1*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="70" />
+            <RowDefinition Height="90" />
             <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
-        <TextBox Name="SearchTextBox" Margin="15" BorderBrush="#ADADAD"/>
-        <Button Grid.Column="1" Margin="15" Click="SearchBtn_Click"  Name="SearchBtn">
+        <ComboBox x:Name="DistrictComboBox" DisplayMemberPath="Name" Width="300" Margin="-1000 0 0 0"/>
+
+        <TextBox Name="SearchTextBox" Margin="310 0 0 0" BorderBrush="#ADADAD"/>
+        <Button Grid.Column="1" Click="SearchBtn_Click"  Name="SearchBtn" Width="190">
             <TextBlock Text="Поиск" Foreground="White" FontSize="15"/>
         </Button>
-        <Image Name="ResultImage" Grid.Row="1" Grid.ColumnSpan="2" Margin="0 -40 0 0 " Height="500" />
+        <Image Name="ResultImage" Grid.Row="1" Grid.ColumnSpan="2" Margin="0 -40 0 0 " Height="800" />
     </Grid>
 </Page>

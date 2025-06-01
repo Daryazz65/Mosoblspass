@@ -16,7 +16,13 @@ namespace Mosoblspass.View.Dispatcher.Pages
         public SearchPage()
         {
             InitializeComponent();
+            LoadDistricts();
             SearchHistory.Add(SearchTextBox.Text);
+        }
+        private void LoadDistricts()
+        {
+            var photos = _context.Photos.ToList();
+            DistrictComboBox.ItemsSource = photos;
         }
         private void SearchBtn_Click(object sender, RoutedEventArgs e)
         {

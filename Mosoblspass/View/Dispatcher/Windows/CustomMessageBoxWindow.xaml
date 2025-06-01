@@ -17,13 +17,13 @@
             <TextBlock x:Name="MessageBlock" TextWrapping="Wrap" Margin="0,0,0,20" Foreground="#015198" TextAlignment="Center"/>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <Button x:Name="OkBtn" Width="100" Click="OkBtn_Click" >
-                    <TextBlock Text="OK" Foreground="White"/>
+                    <TextBlock Text="OK" Foreground="White" FontSize="15"/>
                 </Button>
                 <Button x:Name="YesBtn" Width="100" Margin="10,0,0,0" Click="YesBtn_Click" Visibility="Collapsed">
-                    <TextBlock Text="Да" Foreground="White"/>
+                    <TextBlock Text="Да" Foreground="White" FontSize="15"/>
                 </Button>
                 <Button x:Name="NoBtn" Width="100" Margin="10,0,0,0" Click="NoBtn_Click" Visibility="Collapsed">
-                    <TextBlock Text="Нет" Foreground="White"/>
+                    <TextBlock Text="Нет" Foreground="White" FontSize="15"/>
                 </Button>
             </StackPanel>
         </StackPanel>

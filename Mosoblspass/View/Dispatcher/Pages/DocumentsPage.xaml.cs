@@ -39,7 +39,7 @@ namespace Mosoblspass.View.Dispatcher.Pages
             var btn = new Button
             {
                 Margin = new Thickness(0, 0, 0, 10),
-                Height = 40,
+                Width = 900,
                 FontSize = 16
             };
             btn.Content = new TextBlock

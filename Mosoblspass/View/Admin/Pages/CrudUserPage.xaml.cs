@@ -30,7 +30,7 @@ namespace Mosoblspass.View.Admin.Pages
         {
             NameBox.Text = "";
             LoginBox.Text = "";
-            PasswordBox.Password = "";
+            PasswordBox.Text = "";
             RoleBox.SelectedIndex = -1;
             EmailBox.Text = "";
             PhoneBox.Text = "";
@@ -41,7 +41,7 @@ namespace Mosoblspass.View.Admin.Pages
         {
             if (string.IsNullOrWhiteSpace(NameBox.Text) ||
                 string.IsNullOrWhiteSpace(LoginBox.Text) ||
-                string.IsNullOrWhiteSpace(PasswordBox.Password) ||
+                string.IsNullOrWhiteSpace(PasswordBox.Text) ||
                 RoleBox.SelectedItem == null)
             {
                 MessageBoxHelper.Information("Заполните все обязательные поля (ФИО, Логин, Пароль, Роль).");
@@ -51,7 +51,7 @@ namespace Mosoblspass.View.Admin.Pages
             {
                 Name = NameBox.Text,
                 Login = LoginBox.Text,
-                Password = PasswordBox.Password,
+                Password = PasswordBox.Text,
                 IdRole = (int)RoleBox.SelectedValue,
                 Email = EmailBox.Text,
                 Phone = PhoneBox.Text,
@@ -68,7 +68,7 @@ namespace Mosoblspass.View.Admin.Pages
                 selectedUser = user;
                 NameBox.Text = user.Name;
                 LoginBox.Text = user.Login;
-                PasswordBox.Password = user.Password;
+                PasswordBox.Text = user.Password;
                 RoleBox.SelectedValue = user.IdRole;
                 EmailBox.Text = user.Email;
                 PhoneBox.Text = user.Phone;
@@ -84,7 +84,7 @@ namespace Mosoblspass.View.Admin.Pages
             }
             selectedUser.Name = NameBox.Text;
             selectedUser.Login = LoginBox.Text;
-            selectedUser.Password = PasswordBox.Password;
+            selectedUser.Password = PasswordBox.Text;
             selectedUser.IdRole = (int)RoleBox.SelectedValue;
             selectedUser.Email = EmailBox.Text;
             selectedUser.Phone = PhoneBox.Text;
