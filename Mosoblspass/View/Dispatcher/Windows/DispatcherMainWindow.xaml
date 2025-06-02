@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Mosoblspass.View.Dispatcher.Windows"
         mc:Ignorable="d"
         Title="Окно диспетчера" Height="1030" Width="1830" 
-                 WindowStartupLocation="CenterScreen">
+               WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="60" />

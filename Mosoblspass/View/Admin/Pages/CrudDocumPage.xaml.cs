@@ -85,9 +85,6 @@ namespace Mosoblspass.View.Admin.Pages
             _addresses = addresses;
             AddressComboBox.ItemsSource = _addresses;
         }
-
-
-
         private void AddressTextBox_GotFocus(object sender, RoutedEventArgs e)
         {
             if (AddressTextBox.Text == "Введите название адреса")
@@ -95,7 +92,6 @@ namespace Mosoblspass.View.Admin.Pages
                 AddressTextBox.Text = "";
             }
         }
-
         private void AddressTextBox_LostFocus(object sender, RoutedEventArgs e)
         {
             if (AddressTextBox.Text == "")
@@ -103,7 +99,6 @@ namespace Mosoblspass.View.Admin.Pages
                 AddressTextBox.Text = "Введите название адреса";
             }
         }
-
         private void DeleteDocumentButton_Click(object sender, RoutedEventArgs e)
         {
             var selectedSchedule = ScheduleGrid.SelectedItem as FireDispatchSchedule;
@@ -118,6 +113,5 @@ namespace Mosoblspass.View.Admin.Pages
                 LoadSchedulesAsync();
             }
         }
-
     }
 }
